@@ -11,81 +11,110 @@ body {
 }
 
 /* --- Bumi Kanan Bawah --- */
-.earth-quarter-bg {
+/* --- Siluet Bumi Bulat & Di Depan --- */
+.earth-bg-front {
     position: fixed;
     right: 0; bottom: 0;
-    width: 700px;
-    height: 700px;
-    z-index: 1;
+    width: 900px;
+    height: 480px;
+    z-index: 3;
     pointer-events: none;
-    opacity: 0.98;
+    opacity: 0.99;
     transition: opacity 0.4s;
 }
 @media (max-width: 1200px) {
-    .earth-quarter-bg {
-        width: 420px;
-        height: 420px;
+    .earth-bg-front {
+        width: 600px;
+        height: 320px;
     }
 }
 @media (max-width: 700px) {
-    .earth-quarter-bg {
-        width: 160px;
-        height: 160px;
+    .earth-bg-front {
+        width: 260px;
+        height: 130px;
     }
 }
 
-/* --- Logo Bumansa Besar --- */
+/* --- Logo Bumansa Lebih Besar --- */
 .hero-image .logo-img {
-    width: 340px;
-    height: 340px;
-    max-width: 90vw;
-    max-height: 90vw;
+    width: 420px;
+    height: 420px;
+    max-width: 96vw;
+    max-height: 96vw;
     border-radius: 50%;
     background: #fff8eb;
     box-shadow: 0 4px 24px rgba(245,177,0,0.13);
     padding: 0;
     margin: 0;
     object-fit: contain;
-    z-index: 3;
+    z-index: 4;
     transition: width 0.3s, height 0.3s;
 }
 @media (max-width: 1100px) {
     .hero-image .logo-img {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
     }
 }
 @media (max-width: 700px) {
     .hero-image .logo-img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
     }
 }
 
-/* --- Awan SVG lebih kontras & outline biru, z-index tertinggi --- */
+/* --- Cloud Style --- */
 .cloud-svg {
     position: fixed !important;
     z-index: 101 !important;
     opacity: 0.99;
-    filter: drop-shadow(0 2px 20px #b3e0fc88);
+    filter: drop-shadow(0 2px 40px #b3e0fc77);
     pointer-events: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
 }
-.cloud-svg ellipse, .cloud-svg path {
-    stroke: #7ecce4;
-    stroke-width: 2.3;
+.cloud1 { top:60px; left:5vw; animation:cloudX1 23s linear infinite;}
+.cloud2 { top:90px; left:60vw; animation:cloudX2 32s linear infinite;}
+.cloud3 { top:230px; left:30vw; animation:cloudX3 19s linear infinite;}
+.cloud4 { top:310px; left:12vw; animation:cloudX4 25s linear infinite;}
+.cloud5 { top:180px; left:70vw; animation:cloudX5 28s linear infinite;}
+/* Awan di posisi tengah dan lintas hero */
+@media (max-width:900px) {
+    .cloud3 { top:160px; }
+    .cloud4 { top:190px; }
+    .cloud5 { top:120px; }
 }
-.cloud-svg ellipse {
-    stroke-opacity: 0.6;
-}
-.cloud1 { left:8vw; top:70px; animation:cloudMove1 16s linear infinite;}
-.cloud2 { left:62vw; top:110px; animation:cloudMove2 19s linear infinite;}
-.cloud3 { left:42vw; top:50px; animation:cloudMove3 22s linear infinite;}
-@keyframes cloudMove1 { 0%{left:8vw;} 100%{left:75vw;} }
-@keyframes cloudMove2 { 0%{left:62vw;} 100%{left:12vw;} }
-@keyframes cloudMove3 { 0%{left:42vw;} 100%{left:68vw;} }
 
-/* --- Hero dan Section lain: biarkan tetap seperti sebelumnya, tidak perlu diubah --- */
+/* Hanya animasi horizontal (samping), tidak naik-turun */
+@keyframes cloudX1 {
+    0% { left: 5vw; opacity:1;}
+    85% { opacity:1;}
+    95% { opacity:0;}
+    100% { left: 94vw; opacity:0;}
+}
+@keyframes cloudX2 {
+    0% { left:60vw; opacity:1;}
+    85% { opacity:1;}
+    95% { opacity:0;}
+    100% { left:2vw; opacity:0;}
+}
+@keyframes cloudX3 {
+    0% { left:30vw; opacity:1;}
+    80% { opacity:1;}
+    98% { opacity:0;}
+    100% { left:90vw; opacity:0;}
+}
+@keyframes cloudX4 {
+    0% { left:12vw; opacity:1;}
+    85% { opacity:1;}
+    99% { opacity:0;}
+    100% { left:94vw; opacity:0;}
+}
+@keyframes cloudX5 {
+    0% { left:70vw; opacity:1;}
+    85% { opacity:1;}
+    98% { opacity:0;}
+    100% { left:3vw; opacity:0;}
+}
 
 /* === NAVBAR === */
 .navbar {
