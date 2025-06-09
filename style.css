@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 7vw 18px 7vw;
+    padding: 24px 7vw 12px 7vw;
     background: rgba(255,255,255,0.93);
     box-shadow: 0 2px 8px rgba(220,220,220,0.07);
     position: sticky;
@@ -42,30 +42,38 @@ body {
     display: flex;
     gap: 32px;
     list-style: none;
+    position: relative;
 }
 .nav-links a {
     text-decoration: none;
     color: #222;
     font-size: 1.09em;
     font-weight: 600;
-    transition: color 0.2s;
+    transition: color 0.22s;
     position: relative;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(90deg, #ffefc2 0%, #e3f6ff 100%);
+    box-shadow: 0 2px 8px #ffe49b33;
+    margin-right: 4px;
 }
-.nav-links a:after {
-    content:'';
-    display:block;
-    height:3px;
-    width:0%;
-    background: linear-gradient(90deg,#ffe49b,#f5b100);
-    border-radius:2px;
-    transition: width 0.3s;
-    margin-top:2px;
+.nav-links a:hover, .nav-links a:focus {
+    color: #fff;
+    background: linear-gradient(90deg,#f5b100 10%,#4067c1 100%);
+    box-shadow: 0 6px 18px #ffe49b22;
+    transform: scale(1.06) translateY(-2px);
+    text-shadow: 0 1px 8px #fff3;
 }
-.nav-links a:hover {
-    color: #f5b100;
+.nav-icon {
+    font-size: 1.1em;
+    margin-right: 4px;
 }
-.nav-links a:hover:after {
-    width:90%;
+
+.nav-underline {
+    display: none;
 }
 
 /* === HERO SECTION === */
@@ -123,7 +131,7 @@ body {
 
 .hero-text {
     flex: 1 1 48%;
-    background: rgba(255,255,255,0.83);
+    background: rgba(255,255,255,0.87);
     border-radius: 25px;
     padding: 48px 36px 48px 48px;
     box-shadow: 0 4px 24px rgba(220,180,80,0.07);
@@ -138,6 +146,54 @@ body {
     margin-bottom: 18px;
     font-weight: 700;
     letter-spacing: -2px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+}
+.cute-face {
+    display: inline-flex;
+    align-items: flex-end;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    position: relative;
+    height: 1.2em;
+}
+.eye {
+    width: 13px;
+    height: 17px;
+    background: #232323;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    position: relative;
+    animation: blink 4.7s infinite;
+}
+.left-eye { }
+.right-eye { }
+.mouth {
+    width: 18px;
+    height: 10px;
+    border: 2px solid #232323;
+    border-top: none;
+    border-bottom-left-radius: 18px 20px;
+    border-bottom-right-radius: 18px 20px;
+    margin: 0 1.5px 1.3px 1.5px;
+    display: inline-block;
+    vertical-align: bottom;
+    background: none;
+    position: relative;
+    top: 3px;
+    animation: smileMove 5.5s ease-in-out infinite alternate;
+}
+@keyframes blink {
+    0%,92%,96%,100% { height:17px;}
+    94% { height:2px;}
+    95% { height:2px;}
+}
+@keyframes smileMove {
+    0%,100% { transform:rotate(0deg);}
+    50% { transform:rotate(-9deg);}
 }
 .bumansa-meaning {
     color: #f5b100;
@@ -285,6 +341,94 @@ body {
     letter-spacing: 0.1px;
 }
 
+/* === TEAM SECTION === */
+.team {
+    width: 100vw;
+    background: linear-gradient(90deg,#e3f6ff 0%, #ffe49b 100%);
+    padding: 72px 0 62px 0;
+    text-align: center;
+    position:relative;
+    z-index:2;
+}
+.team h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #232323;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 22px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 18px #ffe49b44;
+}
+.team-desc {
+    color: #4067c1;
+    font-size: 1.15em;
+    margin-bottom: 38px;
+    font-weight: 600;
+}
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+}
+.team-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 4px 22px #ffe49b33;
+    padding: 32px 26px 22px 26px;
+    max-width: 250px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.22s, box-shadow 0.25s, background 0.17s;
+    position: relative;
+    border: 2px solid #d8e7ff88;
+    cursor:pointer;
+}
+.team-card:hover {
+    background: linear-gradient(120deg,#ffe49b60 50%,#e3f6ff 100%);
+    transform: translateY(-12px) scale(1.04) rotate(1deg);
+    box-shadow: 0 10px 36px #f5b10022;
+    border-color: #f5b100cc;
+}
+.avatar {
+    width: 85px; height: 85px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 18px;
+    border: 3.5px solid #f5b100cc;
+    transition: border-color 0.2s;
+}
+.team-card:hover .avatar {
+    border-color: #4067c1;
+}
+.member-name {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 1.17em;
+    color: #232323;
+    margin-bottom: 6px;
+}
+.role {
+    color: #4067c1;
+    font-size: 0.99em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.team-badge {
+    margin-top: 10px;
+    background: linear-gradient(90deg,#ffe49b 0%, #e3f6ff 80%);
+    color: #f5b100;
+    font-size: 0.97em;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 14px;
+    box-shadow:0 2px 9px #ffe49b33;
+    letter-spacing: 0.3px;
+}
+
 /* === FOOTER === */
 footer {
     width: 100vw;
@@ -300,11 +444,13 @@ footer {
 }
 
 /* === RESPONSIVE DESIGN === */
-@media (max-width: 900px) {
-    .hero-content {
-        flex-direction: column-reverse;
-        justify-content: center;
+@media (max-width: 1100px) {
+    .hero-content, .filosofi-cards, .team-cards {
+        flex-direction: column;
         align-items: center;
+        gap: 30px;
+    }
+    .hero-content {
         padding: 36px 0 0 0;
     }
     .hero-text {
@@ -316,25 +462,20 @@ footer {
         margin: 0 0 28px 0;
         width: 210px;
     }
-    .filosofi-cards {
-        gap: 20px;
-        flex-direction: column;
-        align-items: center;
-    }
+}
+
+@media (max-width: 700px) {
     .navbar, .hero-content {
         padding-left: 4vw;
         padding-right: 4vw;
     }
-}
-
-@media (max-width: 600px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
     .nav-links {
-        gap: 18px;
+        gap: 16px;
         font-size: 0.96em;
     }
     .hero-text {
@@ -343,8 +484,11 @@ footer {
     .filosofi {
         padding: 38px 0 28px 0;
     }
-    .filosofi-card {
+    .filosofi-card, .team-card {
         max-width: 98vw;
         min-width: unset;
+    }
+    .team {
+        padding: 36px 0 32px 0;
     }
 }
