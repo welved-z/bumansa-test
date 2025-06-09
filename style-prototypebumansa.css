@@ -10,15 +10,22 @@ body {
     z-index: 1;
 }
 
-/* === SILUET BUMI === */
-.earth-silhouette-bg {
+/* === SILUET BUMI KANAN BAWAH === */
+.earth-quarter-bg {
     position: fixed;
-    left: 0; bottom: 0;
-    width: 100vw;
-    min-height: 280px;
+    right: 0; bottom: 0;
+    width: 340px;
+    height: 340px;
     z-index: 0;
     pointer-events: none;
-    user-select: none;
+    opacity: 0.93;
+    transition: opacity 0.4s;
+}
+@media (max-width: 600px) {
+    .earth-quarter-bg {
+        width: 160px;
+        height: 160px;
+    }
 }
 
 /* === NAVBAR === */
@@ -40,7 +47,7 @@ body {
     backdrop-filter: blur(6px);
 }
 .tradisional-title {
-    font-family: 'Marhey', 'Dancing Script', 'Sriracha', cursive;
+    font-family: 'Marhey', 'Dancing Script', cursive;
     font-size: 2.5em;
     color: #e2ac0d;
     letter-spacing: 1px;
@@ -51,7 +58,7 @@ body {
     background-clip: text;
 }
 .tradisional-title span {
-    font-family: 'Dancing Script', 'Sriracha', cursive;
+    font-family: 'Dancing Script', cursive;
     color: #4067c1;
     letter-spacing: 2px;
     font-size: 1.2em;
@@ -114,28 +121,34 @@ body {
     top: 0; left: 0; width: 100vw; height: 100%;
     z-index: 1; pointer-events: none; overflow: hidden;
 }
-.cloud, .sun {
+
+.cloud-svg {
     position: absolute;
-    opacity: 0.7;
-    filter: blur(1.5px);
+    opacity: 0.90;
+    filter: drop-shadow(0 2px 8px #e3f6ff66);
+    z-index: 2;
 }
-.cloud1 { left:10vw; top:90px; width:110px; height:50px; background:#fff; border-radius:50px; animation:cloudMove1 16s linear infinite;}
-.cloud2 { left:65vw; top:120px; width:150px; height:60px; background:#fff; border-radius:60px; animation:cloudMove2 19s linear infinite;}
-.cloud3 { left:45vw; top:60px; width:90px; height:40px; background:#fff; border-radius:42px; animation:cloudMove3 22s linear infinite;}
+.cloud1 { left:8vw; top:70px; animation:cloudMove1 16s linear infinite;}
+.cloud2 { left:62vw; top:110px; animation:cloudMove2 19s linear infinite;}
+.cloud3 { left:42vw; top:50px; animation:cloudMove3 22s linear infinite;}
+
+@keyframes cloudMove1 { 0%{left:8vw;} 100%{left:75vw;} }
+@keyframes cloudMove2 { 0%{left:62vw;} 100%{left:12vw;} }
+@keyframes cloudMove3 { 0%{left:42vw;} 100%{left:68vw;} }
+
 .sun {
-    top: 60px;
-    left: 82vw;
-    width: 90px;
-    height: 90px;
+    top: 50px;
+    left: 80vw;
+    width: 110px;
+    height: 110px;
     background: radial-gradient(circle at 30% 30%,#ffd83b 60%,#ffefb7 100%);
     border-radius: 50%;
     animation: sunFloat 7s ease-in-out infinite alternate;
     box-shadow: 0 0 40px 8px #ffe08344;
+    position: absolute;
+    z-index: 1;
 }
-@keyframes cloudMove1 { 0%{left:10vw;} 100%{left:80vw;} }
-@keyframes cloudMove2 { 0%{left:65vw;} 100%{left:10vw;} }
-@keyframes cloudMove3 { 0%{left:45vw;} 100%{left:70vw;} }
-@keyframes sunFloat { 0%{top:60px;} 100%{top:90px;} }
+@keyframes sunFloat { 0%{top:50px;} 100%{top:90px;} }
 
 .hero-content {
     position: relative;
@@ -244,20 +257,31 @@ body {
 }
 
 .hero-image {
-    flex: 1 1 32%;
+    flex: 1 1 38%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.logo-bg-sun {
+    background: #fffbe8;
+    border-radius: 50%;
+    box-shadow: 0 4px 44px #ffe49b77, 0 0px 0 #ffe49b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 360px;
+    margin-left: 6vw;
+    position: relative;
+}
 .logo-img {
-    width: 270px;
-    max-width: 90vw;
+    width: 240px;
+    max-width: 83vw;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 4px 24px rgba(245,177,0,0.16);
     background: #fff8eb;
-    padding: 18px;
-    margin-left: 5vw;
+    padding: 28px;
     transition: transform 0.7s cubic-bezier(.62,-0.13,.87,.73);
     animation: popLogo 1.4s cubic-bezier(.62,-0.13,.87,.73) 1;
 }
@@ -325,6 +349,14 @@ body {
         padding: 18px 8vw 16px 8vw;
         font-size: 1.3em;
         max-width: 99vw;
+    }
+    .logo-bg-sun {
+        width: 180px;
+        height: 180px;
+    }
+    .logo-img {
+        width: 110px;
+        padding: 10px;
     }
 }
 
@@ -512,9 +544,11 @@ footer {
         padding: 36px 20px;
         text-align: center;
     }
+    .logo-bg-sun {
+        margin-left: 0;
+    }
     .logo-img {
-        margin: 0 0 28px 0;
-        width: 210px;
+        width: 180px;
     }
 }
 
