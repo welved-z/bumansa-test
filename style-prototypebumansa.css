@@ -14,19 +14,42 @@ body {
 .earth-quarter-bg {
     position: fixed;
     right: 0; bottom: 0;
-    width: 340px;
-    height: 340px;
-    z-index: 0;
+    width: 700px;
+    height: 700px;
+    z-index: 1;
     pointer-events: none;
-    opacity: 0.93;
+    opacity: 0.98;
     transition: opacity 0.4s;
 }
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
     .earth-quarter-bg {
-        width: 160px;
-        height: 160px;
+        width: 410px;
+        height: 410px;
     }
 }
+@media (max-width: 700px) {
+    .earth-quarter-bg {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+/* === AWAN DI DEPAN SEMUA, LEBIH KONTRAS === */
+.cloud-svg {
+    position: fixed;
+    z-index: 99;
+    opacity: 0.98;
+    filter: drop-shadow(0 2px 16px #b3e0fc88);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.cloud1 { left:8vw; top:70px; animation:cloudMove1 16s linear infinite;}
+.cloud2 { left:62vw; top:110px; animation:cloudMove2 19s linear infinite;}
+.cloud3 { left:42vw; top:50px; animation:cloudMove3 22s linear infinite;}
+
+@keyframes cloudMove1 { 0%{left:8vw;} 100%{left:75vw;} }
+@keyframes cloudMove2 { 0%{left:62vw;} 100%{left:12vw;} }
+@keyframes cloudMove3 { 0%{left:42vw;} 100%{left:68vw;} }
 
 /* === NAVBAR === */
 .navbar {
@@ -122,20 +145,6 @@ body {
     z-index: 1; pointer-events: none; overflow: hidden;
 }
 
-.cloud-svg {
-    position: absolute;
-    opacity: 0.90;
-    filter: drop-shadow(0 2px 8px #e3f6ff66);
-    z-index: 2;
-}
-.cloud1 { left:8vw; top:70px; animation:cloudMove1 16s linear infinite;}
-.cloud2 { left:62vw; top:110px; animation:cloudMove2 19s linear infinite;}
-.cloud3 { left:42vw; top:50px; animation:cloudMove3 22s linear infinite;}
-
-@keyframes cloudMove1 { 0%{left:8vw;} 100%{left:75vw;} }
-@keyframes cloudMove2 { 0%{left:62vw;} 100%{left:12vw;} }
-@keyframes cloudMove3 { 0%{left:42vw;} 100%{left:68vw;} }
-
 .sun {
     top: 50px;
     left: 80vw;
@@ -183,6 +192,7 @@ body {
     align-items: center;
     gap: 18px;
     position: relative;
+    z-index: 2;
 }
 .cute-face {
     display: inline-flex;
@@ -262,28 +272,20 @@ body {
     justify-content: center;
     align-items: center;
 }
-.logo-bg-sun {
-    background: #fffbe8;
-    border-radius: 50%;
-    box-shadow: 0 4px 44px #ffe49b77, 0 0px 0 #ffe49b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 360px;
-    height: 360px;
-    margin-left: 6vw;
-    position: relative;
-}
 .logo-img {
-    width: 240px;
-    max-width: 83vw;
-    height: auto;
+    width: 330px;
+    max-width: 95vw;
+    height: 330px;
+    max-height: 95vw;
     border-radius: 50%;
-    box-shadow: 0 4px 24px rgba(245,177,0,0.16);
+    box-shadow: 0 4px 24px rgba(245,177,0,0.13);
     background: #fff8eb;
-    padding: 28px;
+    padding: 0;
+    margin-left: 0;
     transition: transform 0.7s cubic-bezier(.62,-0.13,.87,.73);
     animation: popLogo 1.4s cubic-bezier(.62,-0.13,.87,.73) 1;
+    object-fit: contain;
+    z-index: 3;
 }
 .floating {
     animation: floating 5.4s infinite ease-in-out alternate;
@@ -350,13 +352,13 @@ body {
         font-size: 1.3em;
         max-width: 99vw;
     }
-    .logo-bg-sun {
-        width: 180px;
-        height: 180px;
-    }
     .logo-img {
-        width: 110px;
-        padding: 10px;
+        width: 140px;
+        height: 140px;
+    }
+    .earth-quarter-bg {
+        width: 150px !important;
+        height: 150px !important;
     }
 }
 
@@ -544,11 +546,9 @@ footer {
         padding: 36px 20px;
         text-align: center;
     }
-    .logo-bg-sun {
-        margin-left: 0;
-    }
     .logo-img {
-        width: 180px;
+        width: 170px;
+        height: 170px;
     }
 }
 
@@ -578,5 +578,9 @@ footer {
     }
     .team {
         padding: 36px 0 32px 0;
+    }
+    .logo-img {
+        width: 110px;
+        height: 110px;
     }
 }
