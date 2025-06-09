@@ -27,16 +27,23 @@ body {
     box-shadow: 0 10px 32px rgba(160,180,210,0.13);
     backdrop-filter: blur(6px);
 }
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    font-weight: 700;
-    color: #232323;
-    letter-spacing: -1.5px;
+.tradisional-title {
+    font-family: 'Marhey', 'Dancing Script', 'Sriracha', cursive;
+    font-size: 2.5em;
+    color: #e2ac0d;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px #fdf3be, 0 1px 1px #b8860b;
+    background: linear-gradient(90deg, #ffe49b 0%, #f5b100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
-.logo span {
-    color: #f5b100;
-    font-weight: 700;
+.tradisional-title span {
+    font-family: 'Dancing Script', 'Sriracha', cursive;
+    color: #4067c1;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    text-shadow: 0 1px 8px #bbe2fe;
 }
 .nav-links {
     display: flex;
@@ -264,14 +271,48 @@ body {
     padding: 30px 0 16px 0;
     z-index: 3;
 }
-.quote blockquote {
-    font-size: 1.37em;
+.fancyquote {
+    font-family: 'Satisfy', 'Italianno', cursive;
+    font-size: 2.1em;
+    color: #f5b100;
+    background: linear-gradient(90deg, #ffe49b 0%, #e3f6ff 100%);
+    border-left: 7px solid #f5b100;
+    border-radius: 16px;
+    padding: 28px 48px 26px 48px;
+    margin: 0 auto;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 8px 36px #ffe49b33;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+    font-weight: 400;
+}
+.fancyquote:before {
+    content: "❝";
+    font-size: 2.2em;
     color: #4067c1;
-    font-family: 'Montserrat',sans-serif;
-    font-weight: 600;
-    letter-spacing:0.5px;
-    font-style:italic;
-    text-shadow:0 2px 10px #ffe49b66;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    opacity: 0.6;
+}
+.fancyquote:after {
+    content: "❞";
+    font-size: 2.2em;
+    color: #4067c1;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    opacity: 0.6;
+}
+@media (max-width:600px) {
+    .fancyquote {
+        padding: 18px 8vw 16px 8vw;
+        font-size: 1.3em;
+        max-width: 99vw;
+    }
 }
 
 /* === FILOSOFI SECTION === */
