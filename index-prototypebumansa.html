@@ -8,20 +8,18 @@
     <link rel="stylesheet" href="style-prototypebumansa.css">
 </head>
 <body>
-  <div class="earth-quarter-bg" aria-hidden="true">
-  <svg viewBox="0 0 800 800" width="800" height="800">
-    <!-- Bumi biru -->
-    <path d="M800,800 Q800,220 220,800 Z" fill="#b3e0fc"/>
-    <!-- Daratan hijau muda -->
-    <path d="M800,800 Q760,500 600,650 Q700,700 400,680 Q300,720 220,800 Z" fill="#aee89c"/>
-    <!-- Daratan hijau gelap -->
-    <path d="M800,800 Q780,700 720,720 Q740,760 650,790 Q700,800 800,800 Z" fill="#64b97c"/>
-    <!-- Outline -->
-    <path d="M220,800 Q800,220 800,800 Z" fill="none" stroke="#7ecce4" stroke-width="16" opacity="0.22"/>
+ <div class="earth-bg-front" aria-hidden="true">
+  <svg viewBox="0 0 960 480" width="960" height="480">
+    <!-- Laut biru -->
+    <ellipse cx="900" cy="480" rx="440" ry="220" fill="#b3e0fc"/>
+    <!-- Daratan hijau -->
+    <ellipse cx="780" cy="410" rx="110" ry="40" fill="#aee89c"/>
+    <ellipse cx="880" cy="420" rx="70" ry="28" fill="#64b97c"/>
+    <ellipse cx="960" cy="390" rx="48" ry="23" fill="#cef2b3"/>
+    <!-- Outline soft -->
+    <ellipse cx="900" cy="480" rx="440" ry="220" fill="none" stroke="#7ecce4" stroke-width="10" opacity="0.18"/>
   </svg>
 </div>
-      </svg>
-    </div>
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
@@ -36,30 +34,16 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
         <!-- Awan SVG di depan -->
-        <svg class="cloud-svg cloud1" width="180" height="70" viewBox="0 0 180 70">
-            <ellipse cx="65" cy="40" rx="45" ry="22" fill="white" fill-opacity="0.97"/>
-            <ellipse cx="40" cy="30" rx="22" ry="14" fill="white" fill-opacity="0.93"/>
-            <ellipse cx="110" cy="38" rx="28" ry="18" fill="white" fill-opacity="0.96"/>
-            <ellipse cx="135" cy="50" rx="18" ry="10" fill="#b3e0fc" fill-opacity="0.48"/>
-            <ellipse cx="80" cy="62" rx="28" ry="8" fill="#e3f6ff" fill-opacity="0.92"/>
-            <path d="M35,50 Q100,80 145,50" fill="none" stroke="#7ecce4" stroke-width="3" opacity="0.33"/>
-        </svg>
-        <svg class="cloud-svg cloud2" width="130" height="52" viewBox="0 0 130 52">
-            <ellipse cx="55" cy="25" rx="32" ry="15" fill="white" fill-opacity="0.95"/>
-            <ellipse cx="25" cy="22" rx="14" ry="8" fill="white" fill-opacity="0.9"/>
-            <ellipse cx="100" cy="30" rx="18" ry="12" fill="#b3e0fc" fill-opacity="0.56"/>
-            <ellipse cx="76" cy="44" rx="22" ry="7" fill="#e3f6ff" fill-opacity="0.85"/>
-            <path d="M22,37 Q62,52 110,36" fill="none" stroke="#7ecce4" stroke-width="2" opacity="0.28"/>
-        </svg>
-        <svg class="cloud-svg cloud3" width="100" height="36" viewBox="0 0 100 36">
-            <ellipse cx="30" cy="17" rx="16" ry="8" fill="white"/>
-            <ellipse cx="50" cy="20" rx="18" ry="9" fill="white" fill-opacity="0.93"/>
-            <ellipse cx="80" cy="23" rx="12" ry="6" fill="#b3e0fc" fill-opacity="0.63"/>
-            <ellipse cx="72" cy="30" rx="14" ry="5" fill="#e3f6ff" fill-opacity="0.82"/>
-            <path d="M30,28 Q54,36 85,26" fill="none" stroke="#7ecce4" stroke-width="2" opacity="0.21"/>
-        </svg>
+        <div class="hero-bg">
+  <!-- 5 awan, posisi bebas, ada yang tengah/menutupi teks -->
+  <svg class="cloud-svg cloud1" width="180" height="70" viewBox="0 0 180 70"><ellipse cx="65" cy="40" rx="45" ry="22" fill="#fff"/><ellipse cx="40" cy="30" rx="22" ry="14" fill="#fff" fill-opacity="0.93"/><ellipse cx="110" cy="38" rx="28" ry="18" fill="#fff" fill-opacity="0.96"/><ellipse cx="135" cy="50" rx="18" ry="10" fill="#e3f6ff" fill-opacity="0.48"/><ellipse cx="80" cy="62" rx="28" ry="8" fill="#e3f6ff" fill-opacity="0.92"/></svg>
+  <svg class="cloud-svg cloud2" width="130" height="52" viewBox="0 0 130 52"><ellipse cx="55" cy="25" rx="32" ry="15" fill="#fff"/><ellipse cx="25" cy="22" rx="14" ry="8" fill="#fff" fill-opacity="0.9"/><ellipse cx="100" cy="30" rx="18" ry="12" fill="#e3f6ff" fill-opacity="0.56"/><ellipse cx="76" cy="44" rx="22" ry="7" fill="#e3f6ff" fill-opacity="0.85"/></svg>
+  <svg class="cloud-svg cloud3" width="100" height="36" viewBox="0 0 100 36"><ellipse cx="30" cy="17" rx="16" ry="8" fill="#fff"/><ellipse cx="50" cy="20" rx="18" ry="9" fill="#fff" fill-opacity="0.93"/><ellipse cx="80" cy="23" rx="12" ry="6" fill="#e3f6ff" fill-opacity="0.63"/><ellipse cx="72" cy="30" rx="14" ry="5" fill="#e3f6ff" fill-opacity="0.82"/></svg>
+  <svg class="cloud-svg cloud4" width="210" height="90" viewBox="0 0 210 90"><ellipse cx="90" cy="50" rx="60" ry="26" fill="#fff"/><ellipse cx="170" cy="60" rx="33" ry="15" fill="#e3f6ff" fill-opacity="0.7"/><ellipse cx="50" cy="54" rx="28" ry="11" fill="#e3f6ff" fill-opacity="0.69"/></svg>
+  <svg class="cloud-svg cloud5" width="160" height="54" viewBox="0 0 160 54"><ellipse cx="80" cy="29" rx="37" ry="15" fill="#fff"/><ellipse cx="130" cy="38" rx="22" ry="8" fill="#e3f6ff" fill-opacity="0.73"/><ellipse cx="44" cy="33" rx="19" ry="7" fill="#e3f6ff" fill-opacity="0.67"/></svg>
+  <div class="sun"></div>
+</div>
         <div class="sun"></div>
         <div class="hero-content">
             <div class="hero-text">
