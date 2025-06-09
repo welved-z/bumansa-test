@@ -1,15 +1,12 @@
 /* === GENERAL RESET === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
 body {
     font-family: 'Quicksand', Arial, sans-serif;
     background: #fcfcff;
     color: #222;
     min-height: 100vh;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 /* === NAVBAR === */
@@ -18,11 +15,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 24px 7vw 18px 7vw;
-    background: #fff;
+    background: rgba(255,255,255,0.93);
     box-shadow: 0 2px 8px rgba(220,220,220,0.07);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.4s, box-shadow 0.3s;
+}
+.navbar.scrolled {
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 10px 32px rgba(160,180,210,0.13);
+    backdrop-filter: blur(6px);
 }
 .logo {
     font-family: 'Montserrat', sans-serif;
@@ -46,35 +49,65 @@ body {
     font-size: 1.09em;
     font-weight: 600;
     transition: color 0.2s;
+    position: relative;
+}
+.nav-links a:after {
+    content:'';
+    display:block;
+    height:3px;
+    width:0%;
+    background: linear-gradient(90deg,#ffe49b,#f5b100);
+    border-radius:2px;
+    transition: width 0.3s;
+    margin-top:2px;
 }
 .nav-links a:hover {
     color: #f5b100;
+}
+.nav-links a:hover:after {
+    width:90%;
 }
 
 /* === HERO SECTION === */
 .hero {
     position: relative;
     width: 100%;
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fcfcff;
+    background: linear-gradient(120deg, #ffe49b 0%, #e3f6ff 80%);
     overflow: hidden;
     padding-top: 30px;
 }
 
-/* SVG background */
 .hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
+    top: 0; left: 0; width: 100vw; height: 100%;
+    z-index: 1; pointer-events: none; overflow: hidden;
 }
+.cloud, .sun {
+    position: absolute;
+    opacity: 0.7;
+    filter: blur(1.5px);
+}
+.cloud1 { left:10vw; top:90px; width:110px; height:50px; background:#fff; border-radius:50px; animation:cloudMove1 16s linear infinite;}
+.cloud2 { left:65vw; top:120px; width:150px; height:60px; background:#fff; border-radius:60px; animation:cloudMove2 19s linear infinite;}
+.cloud3 { left:45vw; top:60px; width:90px; height:40px; background:#fff; border-radius:42px; animation:cloudMove3 22s linear infinite;}
+.sun {
+    top: 60px;
+    left: 82vw;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle at 30% 30%,#ffd83b 60%,#ffefb7 100%);
+    border-radius: 50%;
+    animation: sunFloat 7s ease-in-out infinite alternate;
+    box-shadow: 0 0 40px 8px #ffe08344;
+}
+@keyframes cloudMove1 { 0%{left:10vw;} 100%{left:80vw;} }
+@keyframes cloudMove2 { 0%{left:65vw;} 100%{left:10vw;} }
+@keyframes cloudMove3 { 0%{left:45vw;} 100%{left:70vw;} }
+@keyframes sunFloat { 0%{top:60px;} 100%{top:90px;} }
 
 .hero-content {
     position: relative;
@@ -90,12 +123,14 @@ body {
 
 .hero-text {
     flex: 1 1 48%;
-    background: rgba(255,255,255,0.71);
+    background: rgba(255,255,255,0.83);
     border-radius: 25px;
     padding: 48px 36px 48px 48px;
     box-shadow: 0 4px 24px rgba(220,180,80,0.07);
     margin-right: 32px;
+    animation: fadeInUp 1s .15s both;
 }
+@keyframes fadeInUp { from{ opacity:0; transform:translateY(40px);} to{opacity:1; transform:translateY(0);} }
 .hero-text h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.1em;
@@ -124,12 +159,12 @@ body {
     border-radius: 30px;
     text-decoration: none;
     box-shadow: 0 4px 14px rgba(245,177,0,0.13);
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s, color 0.2s;
 }
 .hero-text .cta-btn:hover {
     background: linear-gradient(90deg,#ffe49b 10%,#f5b100 90%);
-    transform: translateY(-2px) scale(1.05);
-    color: #222;
+    transform: translateY(-2px) scale(1.07);
+    color: #fff;
 }
 
 .hero-image {
@@ -147,16 +182,40 @@ body {
     background: #fff8eb;
     padding: 18px;
     margin-left: 5vw;
-    transition: transform 0.3s;
-}
-.animated-pop {
+    transition: transform 0.7s cubic-bezier(.62,-0.13,.87,.73);
     animation: popLogo 1.4s cubic-bezier(.62,-0.13,.87,.73) 1;
+}
+.floating {
+    animation: floating 5.4s infinite ease-in-out alternate;
 }
 @keyframes popLogo {
     0% { transform: scale(0.6); opacity: 0.2;}
     50% { transform: scale(1.13); opacity: 1;}
     70% { transform: scale(0.97);}
     100% { transform: scale(1);}
+}
+@keyframes floating {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-22px);}
+}
+
+/* === QUOTE SECTION === */
+.quote {
+    position:relative;
+    width:100vw;
+    text-align:center;
+    background: linear-gradient(90deg,#f5b10011 0%,#e3f6ff33 100%);
+    padding: 30px 0 16px 0;
+    z-index: 3;
+}
+.quote blockquote {
+    font-size: 1.37em;
+    color: #4067c1;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+    letter-spacing:0.5px;
+    font-style:italic;
+    text-shadow:0 2px 10px #ffe49b66;
 }
 
 /* === FILOSOFI SECTION === */
@@ -181,7 +240,7 @@ body {
     gap: 40px;
 }
 .filosofi-card {
-    background: rgba(255,255,255,0.88);
+    background: rgba(255,255,255,0.95);
     padding: 34px 30px 28px 30px;
     border-radius: 20px;
     max-width: 330px;
@@ -190,17 +249,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.28s cubic-bezier(.56,-0.23,.7,1.26), box-shadow 0.22s, background 0.26s;
+    cursor:pointer;
+    border: 2.5px solid #ffe49b44;
 }
 .filosofi-card:hover {
-    transform: translateY(-10px) scale(1.04);
-    box-shadow: 0 12px 30px rgba(245,177,0,0.23);
+    transform: translateY(-13px) scale(1.07) rotate(-2deg);
+    background: linear-gradient(120deg,#ffe49b 50%,#fffbe5 100%);
+    box-shadow: 0 16px 40px rgba(245,177,0,0.18);
+    border-color: #f5b100cc;
 }
 .filosofi-card .icon-earth,
 .filosofi-card .icon-sky,
 .filosofi-card .icon-joy {
     font-size: 2.5em;
     margin-bottom: 14px;
+    transition: transform 0.2s;
+}
+.filosofi-card:hover .icon-earth,
+.filosofi-card:hover .icon-sky,
+.filosofi-card:hover .icon-joy {
+    transform: scale(1.18) rotate(-8deg);
 }
 .filosofi-card h3 {
     color: #f5b100;
@@ -219,13 +288,15 @@ body {
 /* === FOOTER === */
 footer {
     width: 100vw;
-    background: #fff8eb;
+    background: #f5b100;
     text-align: center;
     padding: 24px 0 12px 0;
-    color: #8a8a8a;
-    font-size: 1em;
+    color: #fff;
+    font-size: 1.09em;
     margin-top: 40px;
     letter-spacing: 0.5px;
+    font-weight: 600;
+    box-shadow: 0 -4px 24px #ffe49b33;
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -250,13 +321,13 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-}
-
-@media (max-width: 600px) {
     .navbar, .hero-content {
         padding-left: 4vw;
         padding-right: 4vw;
     }
+}
+
+@media (max-width: 600px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
