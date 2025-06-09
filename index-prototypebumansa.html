@@ -4,26 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bumantara Kaharsa</title>
-    <!-- Font tradisional dan quote -->
     <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@700&family=Dancing+Script:wght@700&family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style-prototypebumansa.css">
 </head>
 <body>
-    <!-- Siluet Bumi di kanan bawah -->
+    <!-- Siluet Bumi Kanan Bawah -->
     <div class="earth-quarter-bg" aria-hidden="true">
-      <svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-        <!-- Bumi biru muda -->
-        <path d="M400,400 Q400,150 150,400 Z"
-          fill="#b3e0fc"/>
-        <!-- Daratan utama -->
-        <path d="M400,400 Q380,310 320,350 Q330,380 250,340 Q200,380 150,400 Z"
-          fill="#bdecb6"/>
-        <!-- Daratan kedua -->
-        <path d="M400,400 Q380,370 360,370 Q370,390 340,390 Q330,395 350,400 Z"
-          fill="#f3e9c8"/>
+      <svg viewBox="0 0 800 800" width="800" height="800">
+        <!-- Bumi biru (laut) -->
+        <path d="M800,800 Q800,220 220,800 Z" fill="#b3e0fc"/>
+        <!-- Daratan utama (hijau muda) -->
+        <path d="M800,800 Q760,500 600,650 Q700,700 400,680 Q300,720 220,800 Z"
+              fill="#aee89c"/>
+        <!-- Daratan kedua (hijau lebih gelap) -->
+        <path d="M800,800 Q780,700 720,720 Q740,760 650,790 Q700,800 800,800 Z"
+              fill="#64b97c"/>
         <!-- Outline -->
-        <path d="M150,400 Q400,150 400,400 Z"
-          fill="none" stroke="#7ecce4" stroke-width="10" opacity="0.4"/>
+        <path d="M220,800 Q800,220 800,800 Z" fill="none" stroke="#7ecce4" stroke-width="16" opacity="0.22"/>
       </svg>
     </div>
 
@@ -40,33 +37,31 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg">
-            <!-- Awan SVG custom -->
-            <svg class="cloud-svg cloud1" width="160" height="60" viewBox="0 0 160 60">
-                <ellipse cx="55" cy="35" rx="37" ry="18" fill="#fff" fill-opacity="0.95"/>
-                <ellipse cx="35" cy="28" rx="18" ry="12" fill="#fff" fill-opacity="0.88"/>
-                <ellipse cx="90" cy="32" rx="22" ry="15" fill="#fff" fill-opacity="0.92"/>
-                <ellipse cx="110" cy="40" rx="21" ry="13" fill="#fff" fill-opacity="0.8"/>
-                <ellipse cx="60" cy="52" rx="18" ry="7" fill="#e3f6ff" fill-opacity="0.7"/>
-                <ellipse cx="135" cy="38" rx="16" ry="8" fill="#e3f6ff" fill-opacity="0.55"/>
-                <path d="M25,40 Q50,60 95,40" fill="none" stroke="#b3e0fc" stroke-width="2" opacity="0.53"/>
-            </svg>
-            <svg class="cloud-svg cloud2" width="120" height="45" viewBox="0 0 120 45">
-                <ellipse cx="45" cy="22" rx="28" ry="13" fill="#fff"/>
-                <ellipse cx="22" cy="16" rx="10" ry="7" fill="#fff" fill-opacity="0.85"/>
-                <ellipse cx="72" cy="18" rx="15" ry="9" fill="#fff" fill-opacity="0.94"/>
-                <ellipse cx="98" cy="27" rx="12" ry="7" fill="#e3f6ff" fill-opacity="0.7"/>
-                <path d="M15,28 Q40,38 65,30" fill="none" stroke="#b3e0fc" stroke-width="2" opacity="0.45"/>
-            </svg>
-            <svg class="cloud-svg cloud3" width="90" height="34" viewBox="0 0 90 34">
-                <ellipse cx="28" cy="16" rx="14" ry="7" fill="#fff"/>
-                <ellipse cx="45" cy="16" rx="15" ry="8" fill="#fff" fill-opacity="0.96"/>
-                <ellipse cx="65" cy="18" rx="13" ry="6" fill="#e3f6ff" fill-opacity="0.8"/>
-                <ellipse cx="80" cy="23" rx="8" ry="4" fill="#e3f6ff" fill-opacity="0.5"/>
-                <path d="M20,22 Q38,30 72,24" fill="none" stroke="#b3e0fc" stroke-width="2" opacity="0.36"/>
-            </svg>
-            <div class="sun"></div>
-        </div>
+        <div class="hero-bg"></div>
+        <!-- Awan SVG di depan -->
+        <svg class="cloud-svg cloud1" width="180" height="70" viewBox="0 0 180 70">
+            <ellipse cx="65" cy="40" rx="45" ry="22" fill="white" fill-opacity="0.97"/>
+            <ellipse cx="40" cy="30" rx="22" ry="14" fill="white" fill-opacity="0.93"/>
+            <ellipse cx="110" cy="38" rx="28" ry="18" fill="white" fill-opacity="0.96"/>
+            <ellipse cx="135" cy="50" rx="18" ry="10" fill="#b3e0fc" fill-opacity="0.48"/>
+            <ellipse cx="80" cy="62" rx="28" ry="8" fill="#e3f6ff" fill-opacity="0.92"/>
+            <path d="M35,50 Q100,80 145,50" fill="none" stroke="#7ecce4" stroke-width="3" opacity="0.33"/>
+        </svg>
+        <svg class="cloud-svg cloud2" width="130" height="52" viewBox="0 0 130 52">
+            <ellipse cx="55" cy="25" rx="32" ry="15" fill="white" fill-opacity="0.95"/>
+            <ellipse cx="25" cy="22" rx="14" ry="8" fill="white" fill-opacity="0.9"/>
+            <ellipse cx="100" cy="30" rx="18" ry="12" fill="#b3e0fc" fill-opacity="0.56"/>
+            <ellipse cx="76" cy="44" rx="22" ry="7" fill="#e3f6ff" fill-opacity="0.85"/>
+            <path d="M22,37 Q62,52 110,36" fill="none" stroke="#7ecce4" stroke-width="2" opacity="0.28"/>
+        </svg>
+        <svg class="cloud-svg cloud3" width="100" height="36" viewBox="0 0 100 36">
+            <ellipse cx="30" cy="17" rx="16" ry="8" fill="white"/>
+            <ellipse cx="50" cy="20" rx="18" ry="9" fill="white" fill-opacity="0.93"/>
+            <ellipse cx="80" cy="23" rx="12" ry="6" fill="#b3e0fc" fill-opacity="0.63"/>
+            <ellipse cx="72" cy="30" rx="14" ry="5" fill="#e3f6ff" fill-opacity="0.82"/>
+            <path d="M30,28 Q54,36 85,26" fill="none" stroke="#7ecce4" stroke-width="2" opacity="0.21"/>
+        </svg>
+        <div class="sun"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <h1>
@@ -85,9 +80,7 @@
                 <a href="product.html" class="cta-btn">Lihat Produk</a>
             </div>
             <div class="hero-image">
-                <div class="logo-bg-sun">
-                  <img src="imgin/bumansalogo.png" alt="Logo Bumansa" class="logo-img animated-pop floating">
-                </div>
+                <img src="imgin/bumansalogo.png" alt="Logo Bumansa" class="logo-img animated-pop floating">
             </div>
         </div>
     </section>
@@ -127,7 +120,7 @@
         <div class="team-cards">
             <div class="team-card">
                 <div class="avatar" style="background-image:url('imgin/avatar1.jpg')"></div>
-                <h3 class="member-name">Ariel Anandra Putra</h3>
+                <h3 class="member-name">Welved Z</h3>
                 <p class="role">Frontend Developer</p>
                 <div class="team-badge">🔥 Inovatif & Visioner</div>
             </div>
