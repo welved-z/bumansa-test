@@ -1,82 +1,86 @@
 <!doctype html>
 <html lang="id">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bumantara Kaharsa</title>
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="style.css">
-        <!-- Google Fonts for modern, friendly look -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-        <!-- For Hero SVG background -->
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="logo">Bumantara<span>Kaharsa</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="process.html">Proses Desain</a></li>
-                <li><a href="product.html">Produk</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bumantara Kaharsa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo">Bumantara<span>Kaharsa</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="process.html">Proses Desain</a></li>
+            <li><a href="product.html">Produk</a></li>
+        </ul>
+    </nav>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <!-- SVG Background to represent sky and earth -->
-            <div class="hero-bg">
-                <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="900" cy="570" rx="800" ry="80" fill="#ffe49b"/>
-                    <ellipse cx="300" cy="580" rx="600" ry="60" fill="#e3f6ff"/>
-                    <ellipse cx="720" cy="100" rx="400" ry="50" fill="#c0e5fe"/>
-                    <!-- Clouds -->
-                    <ellipse cx="250" cy="120" rx="100" ry="30" fill="#fff" opacity="0.5"/>
-                    <ellipse cx="1300" cy="100" rx="120" ry="35" fill="#fff" opacity="0.5"/>
-                    <!-- Sun -->
-                    <circle cx="1150" cy="120" r="55" fill="#ffd83b" opacity="0.7"/>
-                </svg>
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+            <div class="sun"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Bumansa</h1>
+                <p>
+                    <span class="bumansa-meaning">Bumansa</span> adalah singkatan dari <b>"Bumantara Kaharsa"</b> yang berarti 
+                    <span class="highlight">"Kesenangan Diantara Langit Dan Bumi"</span>.<br>
+                    Filosofinya adalah menciptakan kebahagiaan tanpa batas, seluas langit dan bumi, membawa makna dalam setiap langkah—seperti warna dan keindahan alam yang tak berujung.
+                </p>
+                <a href="product.html" class="cta-btn">Lihat Produk</a>
             </div>
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Bumansa</h1>
-                    <p>
-                        <span class="bumansa-meaning">Bumansa</span> adalah singkatan dari <b>"Bumantara Kaharsa"</b> yang berarti 
-                        <span class="highlight">"Kesenangan Diantara Langit Dan Bumi"</span>.<br>
-                        Filosofinya adalah menciptakan kebahagiaan tanpa batas, seluas langit dan bumi, membawa makna dalam setiap langkah—seperti warna dan keindahan alam yang tak berujung.
-                    </p>
-                    <a href="product.html" class="cta-btn">Lihat Produk</a>
-                </div>
-                <div class="hero-image">
-                    <img src="imgin/bumansalogo.png" alt="Logo Bumansa" class="logo-img animated-pop">
-                </div>
+            <div class="hero-image">
+                <img src="imgin/bumansalogo.png" alt="Logo Bumansa" class="logo-img animated-pop floating">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Filosofi Section -->
-        <section class="filosofi">
-            <h2>Filosofi Bumansa</h2>
-            <div class="filosofi-cards">
-                <div class="filosofi-card">
-                    <span class="icon-earth">🌍</span>
-                    <h3>Bumi</h3>
-                    <p>Melambangkan keteguhan, landasan, dan kehidupan yang luas. Menjadi fondasi untuk terus berkarya dan berbagi kebaikan.</p>
-                </div>
-                <div class="filosofi-card">
-                    <span class="icon-sky">☁️</span>
-                    <h3>Langit</h3>
-                    <p>Melambangkan harapan, kreativitas, dan impian tanpa batas. Membuka ruang untuk inovasi dan kebahagiaan.</p>
-                </div>
-                <div class="filosofi-card">
-                    <span class="icon-joy">✨</span>
-                    <h3>Kesenangan</h3>
-                    <p>Misi utama Bumansa: membawa kebahagiaan dan energi positif kepada siapa pun, di mana pun.</p>
-                </div>
-            </div>
-        </section>
+    <section class="quote">
+        <blockquote>
+            "Kebahagiaan sejati adalah ketika kita mampu menemukan makna di antara luasnya langit dan bumi."
+        </blockquote>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2025 Bumantara Kaharsa. All rights reserved.</p>
-        </footer>
-    </body>
+    <section class="filosofi">
+        <h2>Filosofi Bumansa</h2>
+        <div class="filosofi-cards">
+            <div class="filosofi-card">
+                <span class="icon-earth">🌍</span>
+                <h3>Bumi</h3>
+                <p>Melambangkan keteguhan, landasan, dan kehidupan yang luas. Menjadi fondasi untuk terus berkarya dan berbagi kebaikan.</p>
+            </div>
+            <div class="filosofi-card">
+                <span class="icon-sky">☁️</span>
+                <h3>Langit</h3>
+                <p>Melambangkan harapan, kreativitas, dan impian tanpa batas. Membuka ruang untuk inovasi dan kebahagiaan.</p>
+            </div>
+            <div class="filosofi-card">
+                <span class="icon-joy">✨</span>
+                <h3>Kesenangan</h3>
+                <p>Misi utama Bumansa: membawa kebahagiaan dan energi positif kepada siapa pun, di mana pun.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Bumantara Kaharsa. All rights reserved.</p>
+    </footer>
+
+    <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('navbar');
+        if(window.scrollY > 20){
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+    </script>
+</body>
 </html>
