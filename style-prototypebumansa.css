@@ -12,28 +12,23 @@ body {
 
 /* --- Bumi Kanan Bawah --- */
 /* --- Siluet Bumi Bulat & Di Depan --- */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
 .earth-bg-front {
-    position: fixed;
+    position: absolute;
     right: 0; bottom: 0;
     width: 900px;
     height: 480px;
-    z-index: 3;
+    z-index: 1;
     pointer-events: none;
     opacity: 0.99;
     transition: opacity 0.4s;
 }
-@media (max-width: 1200px) {
-    .earth-bg-front {
-        width: 600px;
-        height: 320px;
-    }
-}
-@media (max-width: 700px) {
-    .earth-bg-front {
-        width: 260px;
-        height: 130px;
-    }
-}
+@media (max-width: 1200px) {.earth-bg-front { width: 600px; height: 320px; }}
+@media (max-width: 700px) {.earth-bg-front { width: 260px; height: 130px; }}
 
 /* --- Logo Bumansa Lebih Besar --- */
 .hero-image .logo-img {
@@ -332,25 +327,43 @@ body {
 }
 
 .hero-image {
-    flex: 1 1 38%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative; /* tambahkan jika belum */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .logo-img {
-    width: 330px;
-    max-width: 95vw;
-    height: 330px;
-    max-height: 95vw;
-    border-radius: 50%;
-    box-shadow: 0 4px 24px rgba(245,177,0,0.13);
-    background: #fff8eb;
-    padding: 0;
-    margin-left: 0;
-    transition: transform 0.7s cubic-bezier(.62,-0.13,.87,.73);
-    animation: popLogo 1.4s cubic-bezier(.62,-0.13,.87,.73) 1;
-    object-fit: contain;
-    z-index: 3;
+  width: 220px;        /* ukuran logo besar sesuai keinginan */
+  height: 220px;
+  border-radius: 50%;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Tambahkan pseudo-element untuk outline bulat di belakang logo */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 246px;       /* Sedikit lebih besar dari logo (misal 13px per sisi) */
+  height: 246px;
+  border-radius: 50%;
+  background: #fff8eb; /* warna outline */
+  box-shadow: 0 0 0 4px #ffe49b; /* outline kuning lembut */
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .logo-img { width: 120px; height: 120px; }
+  .hero-image::before { width: 138px; height: 138px; }
+}
+
 }
 .floating {
     animation: floating 5.4s infinite ease-in-out alternate;
@@ -418,8 +431,8 @@ body {
         max-width: 99vw;
     }
     .logo-img {
-        width: 140px;
-        height: 140px;
+        width: 220px;
+        height: 220px;
     }
     .earth-quarter-bg {
         width: 150px !important;
