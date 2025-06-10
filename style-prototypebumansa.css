@@ -653,7 +653,39 @@ footer {
         padding: 36px 0 32px 0;
     }
     .logo-img {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
     }
+}
+
+.process-design {
+  padding: 70px 0 60px 0;
+  background: #f7faff;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 80px; /* Biar tidak ketutup navbar yang sticky */
+}
+
+.process-design h2 {
+  color: #4067c1;
+  font-size: 2.3em;
+  margin-bottom: 32px;
+  font-family: 'Montserrat', sans-serif;
+}
+.canva-embed {
+  width: 100%;
+  max-width: 860px;
+  min-height: 480px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 24px #9edbff21;
+}
+.process-design iframe {
+  width: 100%;
+  min-height: 480px;
+  border: none;
+  border-radius: 18px;
+  background: #fff;
 }
