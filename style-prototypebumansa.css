@@ -32,11 +32,11 @@ body {
 
 /* --- Logo Bumansa Lebih Besar --- */
 .hero-image .logo-img {
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
     max-width: 100vw;
     max-height: 100vw;
-    border-radius: 20%;
+    border-radius: 50%;
     background: #fff8eb;
     box-shadow: 0 4px 24px rgba(245,177,0,0.13);
     padding: 0;
