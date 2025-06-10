@@ -32,11 +32,11 @@ body {
 
 /* --- Logo Bumansa Lebih Besar --- */
 .hero-image .logo-img {
-    width: 420px;
-    height: 420px;
-    max-width: 96vw;
-    max-height: 96vw;
-    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    max-width: 100vw;
+    max-height: 100vw;
+    border-radius: 20%;
     background: #fff8eb;
     box-shadow: 0 4px 24px rgba(245,177,0,0.13);
     padding: 0;
@@ -47,15 +47,10 @@ body {
 }
 @media (max-width: 1100px) {
     .hero-image .logo-img {
-        width: 280px;
-        height: 280px;
+        width: 350px;
+        height: 350px;
     }
-}
-@media (max-width: 700px) {
-    .hero-image .logo-img {
-        width: 140px;
-        height: 140px;
-    }
+
 }
 
 /* --- Cloud Style --- */
