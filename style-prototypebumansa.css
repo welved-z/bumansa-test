@@ -972,3 +972,18 @@ footer {
   .product-desc-card { font-size: 0.99em; padding: 13px 4vw;}
   .product-guide { font-size: 0.97em; padding: 12px 7px;}
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(.66,.01,.34,1);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
