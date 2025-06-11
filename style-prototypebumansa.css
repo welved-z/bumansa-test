@@ -987,3 +987,52 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Dancing+Script:wght@700&display=swap');
+
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  background: #fff8eb;
+  box-shadow: 0 2px 12px #ffe49b22;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+  padding: 0 48px;
+}
+.brand-title {
+  display: flex; align-items: center; text-decoration: none; cursor: pointer;
+}
+.brand-blue {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.05em;
+  font-weight: 800;
+  color: #4067c1;
+  letter-spacing: -1px;
+  margin-right: 7px;
+}
+.brand-gold {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #f5b100;
+  letter-spacing: 0.5px;
+  margin-left: 2px;
+}
+.nav-menu {
+  display: flex; gap: 18px; list-style: none; margin: 0; padding: 0;
+}
+.nav-link {
+  display: flex; align-items: center; gap: 7px;
+  background: linear-gradient(90deg,#fff7c3 60%,#e6f9ff 100%);
+  padding: 10px 22px;
+  border-radius: 23px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.13em;
+  font-weight: 700;
+  color: #4067c1;
+  text-decoration: none;
+  box-shadow: 0 1.5px 8px #ffe49b35;
+  transition: background 0.19s, color 0.18s;
+}
+.nav-link:hover {
+  background: linear-gradient(90deg,#ffe49b 35%, #f5b100 100%);
+  color: #fff;
+}
