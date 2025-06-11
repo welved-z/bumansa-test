@@ -109,49 +109,68 @@ body {
 /* === NAVBAR === */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Dancing+Script:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Dancing+Script:wght@700&display=swap');
+
 .navbar {
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 100;
   background: #fff8eb;
   box-shadow: 0 2px 12px #ffe49b22;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 86px; /* LEBIH TINGGI dari sebelumnya, biar tidak sempit */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92px; /* lebih tebal, tampak lega */
   padding: 0 48px;
 }
 
 .brand-title {
-  display: flex; align-items: baseline;
-  gap: 12px;
+  display: flex; align-items: flex-end;
+  user-select: none;
+  cursor: default;
 }
 
-.brand-blue {
+.brand-gold-gradient {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.1em;    /* Tidak terlalu besar */
+  font-size: 2.4em;
   font-weight: 800;
-  color: #4067c1;
-  letter-spacing: -1px;
-  line-height: 1.1;
+  letter-spacing: -2px;
+  background: linear-gradient(90deg, #e5b94a 15%, #fff0b2 60%, #e5b94a 90%);
+  color: #e5b94a; /* fallback */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 2px 6px #ffe49b77);
+  margin-right: 5px;
+  line-height: 1;
 }
 
-.brand-gold {
+.brand-script {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.45em;   /* Proporsional dengan Bumantara */
+  font-size: 2em;
   font-weight: 700;
-  color: #f5b100;
+  color: #f5d06f;
   letter-spacing: 0.5px;
-  line-height: 1.1;
+  margin-left: 3px;
+  margin-bottom: 2px;
+  text-shadow: 0 1.5px 4px #ffe49b4a;
+  line-height: 1;
 }
 
 .nav-menu {
-  display: flex; gap: 18px; list-style: none; margin: 0; padding: 0;
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0; padding: 0;
 }
 
 .nav-link {
   display: flex; align-items: center; gap: 7px;
-  background: linear-gradient(90deg,#fff7c3 60%,#e6f9ff 100%);
-  padding: 12px 26px;
+  background: linear-gradient(90deg,#f7facc 60%,#e6f9ff 100%);
+  padding: 14px 28px;
   border-radius: 23px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.12em;
   font-weight: 700;
   color: #4067c1;
   text-decoration: none;
@@ -164,11 +183,11 @@ body {
 }
 
 @media (max-width: 700px) {
-  .navbar { flex-direction: column; height: auto; padding: 14px 4vw; }
-  .brand-title { margin-bottom: 10px; }
-  .nav-menu { gap: 10px; }
-  .brand-blue { font-size: 1.3em; }
-  .brand-gold { font-size: 1em; }
+  .navbar { flex-direction: column; height: auto; padding: 16px 4vw;}
+  .brand-title { margin-bottom: 8px; }
+  .brand-gold-gradient { font-size: 1.5em;}
+  .brand-script { font-size: 1.18em;}
+  .nav-link { font-size: 0.98em; padding: 12px 16px;}
 }
 .navbar.scrolled {
     background: rgba(255,255,255,0.98);
