@@ -793,9 +793,9 @@ footer {
 }
 .product {
   position: relative;
-  padding: 90px 0 70px 0;
-  min-height: 500px;
-  background: linear-gradient(120deg, #fff8eb 70%, #e3f6ff 100%);
+  padding: 88px 0 68px 0;
+  min-height: 480px;
+  background: linear-gradient(120deg, #fff8eb 60%, #e3f6ff 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -803,24 +803,40 @@ footer {
   z-index: 1;
   scroll-margin-top: 80px;
 }
-.product-bg {
+.product-decor {
   position: absolute;
   width: 100%; height: 100%;
   top: 0; left: 0;
   z-index: 1;
   pointer-events: none;
 }
-.gear2 {
+.python-icon {
   position: absolute;
-  top: 25px; right: 7vw;
-  width: 60px; height: 60px;
-  opacity: 0.4;
-  transform: rotate(0deg);
-  animation: gearSpin 16s linear infinite;
+  top: 24px; left: 6vw;
+  width: 74px;
+  height: 74px;
+  opacity: 0.82;
+  animation: iconPulse 4s infinite alternate;
 }
+@keyframes iconPulse {
+  0% { transform: scale(1) rotate(-10deg);}
+  100% { transform: scale(1.09) rotate(8deg);}
+}
+.cloud-prod {
+  position: absolute;
+  bottom: 24px; right: 8vw;
+  width: 110px; height: 40px;
+  opacity: 0.6;
+  animation: cloudMove2 14s linear infinite alternate;
+}
+@keyframes cloudMove2 {
+  0% { right: 8vw;}
+  100% { right: 15vw;}
+}
+
 .product-title {
   color: #f5b100;
-  font-size: 2.4em;
+  font-size: 2.3em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   margin-bottom: 10px;
@@ -831,43 +847,38 @@ footer {
 .product-title .highlight {
   color: #4067c1;
   font-weight: 800;
-  font-size: 1.01em;
 }
+
 .product-desc {
   color: #4e5f7b;
-  font-size: 1.14em;
+  font-size: 1.18em;
   margin-bottom: 32px;
-  max-width: 680px;
+  max-width: 600px;
   text-align: center;
   z-index: 2;
-  background: rgba(255,255,255,0.67);
+  background: rgba(255,255,255,0.68);
   border-radius: 18px;
-  padding: 16px 28px;
+  padding: 14px 26px 16px 26px;
   box-shadow: 0 2px 14px #ffe49b21;
   animation: fadeInUp 1s 0.1s both;
-}
-.python-embed-card {
-  width: 100%;
-  max-width: 760px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px 0 #ffe49b22;
-  overflow: hidden;
-  margin: 0 auto 18px auto;
   position: relative;
-  z-index: 2;
-  transition: box-shadow 0.3s, transform 0.2s;
 }
-.python-embed-card:hover {
-  box-shadow: 0 8px 44px 0 #aae9ff88, 0 3px 36px #ffe49b3a;
-  transform: translateY(-2px) scale(1.01);
+.product-desc .emoji {
+  font-size: 1.18em;
+  margin-right: 6px;
+  vertical-align: middle;
 }
-.product-link {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
+.python-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 12px 2px 8px;
+  background: linear-gradient(90deg,#e3f6ff 60%, #ffd95e 100%);
+  color: #4067c1;
+  border-radius: 15px;
+  font-size: 0.96em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 1.5px 6
 .run-btn {
   padding: 13px 28px;
   background: linear-gradient(90deg,#ffd95e 35%, #ffe49b 100%);
