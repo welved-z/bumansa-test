@@ -107,17 +107,68 @@ body {
 }
 
 /* === NAVBAR === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Dancing+Script:wght@700&display=swap');
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 7vw 12px 7vw;
-    background: rgba(255,255,255,0.93);
-    box-shadow: 0 2px 8px rgba(220,220,220,0.07);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background 0.4s, box-shadow 0.3s;
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  background: #fff8eb;
+  box-shadow: 0 2px 12px #ffe49b22;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 86px; /* LEBIH TINGGI dari sebelumnya, biar tidak sempit */
+  padding: 0 48px;
+}
+
+.brand-title {
+  display: flex; align-items: baseline;
+  gap: 12px;
+}
+
+.brand-blue {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.1em;    /* Tidak terlalu besar */
+  font-weight: 800;
+  color: #4067c1;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.brand-gold {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.45em;   /* Proporsional dengan Bumantara */
+  font-weight: 700;
+  color: #f5b100;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.nav-menu {
+  display: flex; gap: 18px; list-style: none; margin: 0; padding: 0;
+}
+
+.nav-link {
+  display: flex; align-items: center; gap: 7px;
+  background: linear-gradient(90deg,#fff7c3 60%,#e6f9ff 100%);
+  padding: 12px 26px;
+  border-radius: 23px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #4067c1;
+  text-decoration: none;
+  box-shadow: 0 1.5px 8px #ffe49b35;
+  transition: background 0.19s, color 0.18s;
+}
+.nav-link:hover {
+  background: linear-gradient(90deg,#ffe49b 35%, #f5b100 100%);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .navbar { flex-direction: column; height: auto; padding: 14px 4vw; }
+  .brand-title { margin-bottom: 10px; }
+  .nav-menu { gap: 10px; }
+  .brand-blue { font-size: 1.3em; }
+  .brand-gold { font-size: 1em; }
 }
 .navbar.scrolled {
     background: rgba(255,255,255,0.98);
