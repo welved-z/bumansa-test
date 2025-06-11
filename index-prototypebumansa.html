@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bumantara Kaharsa</title>
+    <style>
+    html { scroll-behavior: smooth; }
+    nav { position:fixed; top:0; width:100%; background:#fff8eb; z-index:99; }
+    nav ul { display:flex; list-style:none; gap:24px; padding:18px 36px; margin:0;}
+    nav a { text-decoration:none; color:#4067c1; font-weight:700;}
+    nav a:hover { color:#f5b100;}
+    .brand-title { font-size:2em; margin:24px 0 0 36px;}
+    .brand-title a { color:#4067c1; text-decoration:none; cursor:pointer; }
+    .brand-title a:hover { color:#f5b100; }
+    .section { min-height: 80vh; padding: 120px 0 60px 0; }
+  </style>
     <link rel="icon" type="image/jpeg" href="imgin/bumansalogo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@700&family=Dancing+Script:wght@700&family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style-prototypebumansa.css">
@@ -11,9 +22,12 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
+        <span class="brand-title">
+      <a href="#" id="refresh-title">BumantaraKaharsa</a>
+    </span>
         <div class="logo tradisional-title">Bumantara<span>Kaharsa</span></div>
         <ul class="nav-links">
-            <li><a href="index-prototypebumansa.html"><span class="nav-icon">🏠</span> Beranda</a></li>
+            <li><a href="#hero"><span class="nav-icon">🏠</span> Beranda</a></li>
             <li><a href="#process-design"><span class="nav-icon">⚙️</span> Proses Design</a></li>
             <li><a href="#product"><span class="nav-icon">🛒</span> Produk</a></li>
         </ul>
@@ -199,7 +213,7 @@
     <footer>
         <p>&copy; 2025 Bumantara Kaharsa. All rights reserved.</p>
     </footer>
-    
+
     <script>
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
@@ -226,5 +240,29 @@ document.addEventListener("DOMContentLoaded", function() {
   reveal();
 });
         </script>
+        <script>
+// Hentikan scroll otomatis ke anchor pada page load pertama
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('DOMContentLoaded', function() {
+  // Jika ada hash pada URL, scroll ke atas dulu
+  if (window.location.hash) {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      const id = window.location.hash.slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({behavior: 'smooth'});
+      }
+    }, 80);
+  }
+});
+              // Refresh halaman saat judul di-klik
+  document.getElementById('refresh-title').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.reload();
+  });
+</script>
 </body>
 </html>
