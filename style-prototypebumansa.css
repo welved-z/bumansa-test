@@ -109,8 +109,7 @@ body {
 /* === NAVBAR === */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Dancing+Script:wght@700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Dancing+Script:wght@700&display=swap');
-
+/* NAVBAR CONTAINER */
 .navbar {
   position: fixed;
   top: 0; left: 0; width: 100%; z-index: 100;
@@ -119,58 +118,64 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 92px; /* lebih tebal, tampak lega */
-  padding: 0 48px;
+  height: 74px;      /* lebih tinggi dari sebelumnya, kini terasa lega */
+  padding: 0 40px;
 }
 
+/* BRAND TITLE */
 .brand-title {
-  display: flex; align-items: flex-end;
+  display: flex;
+  align-items: baseline;
   user-select: none;
   cursor: default;
+  gap: 7px;
 }
 
+/* "Bumantara" dengan efek gold gradient */
 .brand-gold-gradient {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.4em;
+  font-size: 1.65em;   /* lebih kecil dan proporsional */
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   background: linear-gradient(90deg, #e5b94a 15%, #fff0b2 60%, #e5b94a 90%);
   color: #e5b94a; /* fallback */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  filter: drop-shadow(0 2px 6px #ffe49b77);
-  margin-right: 5px;
+  filter: drop-shadow(0 2px 6px #ffe49b66);
+  margin-right: 2px;
   line-height: 1;
 }
 
+/* "Kaharsa" dengan script font */
 .brand-script {
   font-family: 'Dancing Script', cursive;
-  font-size: 2em;
+  font-size: 1.2em;     /* proporsional dengan Bumantara */
   font-weight: 700;
   color: #f5d06f;
-  letter-spacing: 0.5px;
-  margin-left: 3px;
-  margin-bottom: 2px;
-  text-shadow: 0 1.5px 4px #ffe49b4a;
+  letter-spacing: 0.2px;
+  margin-left: 1px;
+  margin-bottom: 1px;
+  text-shadow: 0 1.5px 4px #ffe49b39;
   line-height: 1;
 }
 
+/* MENU */
 .nav-menu {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   list-style: none;
   margin: 0; padding: 0;
 }
 
 .nav-link {
   display: flex; align-items: center; gap: 7px;
-  background: linear-gradient(90deg,#f7facc 60%,#e6f9ff 100%);
-  padding: 14px 28px;
+  background: linear-gradient(90deg,#fff7c3 60%,#fdf6d7 100%);
+  padding: 10px 22px;
   border-radius: 23px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.12em;
+  font-size: 1em;
   font-weight: 700;
   color: #4067c1;
   text-decoration: none;
@@ -182,12 +187,13 @@ body {
   color: #fff;
 }
 
+/* Responsive */
 @media (max-width: 700px) {
-  .navbar { flex-direction: column; height: auto; padding: 16px 4vw;}
-  .brand-title { margin-bottom: 8px; }
-  .brand-gold-gradient { font-size: 1.5em;}
-  .brand-script { font-size: 1.18em;}
-  .nav-link { font-size: 0.98em; padding: 12px 16px;}
+  .navbar { flex-direction: column; height: auto; padding: 12px 2vw;}
+  .brand-title { margin-bottom: 10px; }
+  .brand-gold-gradient { font-size: 1.13em;}
+  .brand-script { font-size: 1em;}
+  .nav-link { font-size: 0.95em; padding: 9px 12px;}
 }
 .navbar.scrolled {
     background: rgba(255,255,255,0.98);
@@ -218,29 +224,7 @@ body {
     list-style: none;
     position: relative;
 }
-.nav-links a {
-    text-decoration: none;
-    color: #222;
-    font-size: 1.09em;
-    font-weight: 600;
-    transition: color 0.22s;
-    position: relative;
-    padding: 6px 16px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(90deg, #ffefc2 0%, #e3f6ff 100%);
-    box-shadow: 0 2px 8px #ffe49b33;
-    margin-right: 4px;
-}
-.nav-links a:hover, .nav-links a:focus {
-    color: #fff;
-    background: linear-gradient(90deg,#f5b100 10%,#4067c1 100%);
-    box-shadow: 0 6px 18px #ffe49b22;
-    transform: scale(1.06) translateY(-2px);
-    text-shadow: 0 1px 8px #fff3;
-}
+
 .nav-icon {
     font-size: 1.1em;
     margin-right: 4px;
