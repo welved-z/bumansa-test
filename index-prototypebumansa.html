@@ -88,18 +88,17 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-    <!-- SATU judul di navbar saja, sebagai tombol home/refresh -->
-    <a href="#" class="brand-title" id="home-title">
-      Bumantara<span class="gold">Kaharsa</span><span class="script">Kaharsa</span>
-    </a>
-        <ul class="nav-links">
-            <li><a href="#hero"><span class="nav-icon">🏠</span> Beranda</a></li>
-            <li><a href="#process-design"><span class="nav-icon">⚙️</span> Proses Design</a></li>
-            <li><a href="#product"><span class="nav-icon">🛒</span> Produk</a></li>
-        </ul>
-        <div class="nav-underline"></div>
-    </nav>
+   <nav class="navbar">
+  <a href="#" class="brand-title" id="home-title">
+    <span class="brand-blue">Bumantara</span>
+    <span class="brand-gold">Kaharsa</span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#hero" class="nav-link" id="nav-beranda"><span>🏠</span> Beranda</a></li>
+    <li><a href="#process-design" class="nav-link"><span>⚙️</span> Proses Design</a></li>
+    <li><a href="#product" class="nav-link"><span>🛒</span> Produk</a></li>
+  </ul>
+</nav>
      <section class="section hero" id="hero">
     <!-- Judul hero, bukan tombol, hanya h1 besar -->
     <h1 class="hero-title">
@@ -300,14 +299,12 @@
     });
 
     // Navbar "Beranda": klik = scroll ke atas/hero, tanpa reload
-    document.getElementById('nav-beranda').addEventListener('click', function(e) {
-      e.preventDefault();
-      // Scroll ke hero section (paling atas setelah navbar)
-      const hero = document.getElementById('hero');
-      hero.scrollIntoView({behavior: "smooth"});
-      // Hapus hash di url
-      history.replaceState("", document.title, window.location.pathname + window.location.search);
-    });
+   // Home judul: hapus hash, scroll ke atas
+document.getElementById('home-title').addEventListener('click', function(e) {
+  e.preventDefault();
+  history.replaceState("", document.title, window.location.pathname + window.location.search);
+  window.scrollTo({top: 0, behavior: "smooth"});
+});
 
     // Hentikan scroll otomatis ke anchor pada page load pertama
     if ('scrollRestoration' in history) {
