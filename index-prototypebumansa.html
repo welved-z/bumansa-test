@@ -15,7 +15,7 @@
         <ul class="nav-links">
             <li><a href="index-prototypebumansa.html"><span class="nav-icon">🏠</span> Beranda</a></li>
             <li><a href="#process-design"><span class="nav-icon">⚙️</span> Proses Design</a></li>
-            <li><a href="product.html"><span class="nav-icon">🛒</span> Produk</a></li>
+            <li><a href="#product"><span class="nav-icon">🛒</span> Produk</a></li>
         </ul>
         <div class="nav-underline"></div>
     </nav>
@@ -211,5 +211,20 @@
         }
     });
     </script>
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll(".section");
+  function reveal() {
+    for (let sec of sections) {
+      const rect = sec.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 80) {
+        sec.classList.add("visible");
+      }
+    }
+  }
+  window.addEventListener("scroll", reveal);
+  reveal();
+});
+        </script>
 </body>
 </html>
